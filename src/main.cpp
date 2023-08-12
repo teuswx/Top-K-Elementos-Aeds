@@ -1,9 +1,11 @@
 #include <iostream>
-#include "Hash.hpp"
+#include "Algoritmo.hpp"
+#include "Heap.hpp"
 #define TAM 31
 using namespace std;
 int main(){
-    Hash h;
-    h.imprimir();
+    Algoritmo a;
+    a.lerArquivo();
+ 
     return 0;
 }
