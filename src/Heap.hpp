@@ -13,7 +13,7 @@ private:
 public:
 
     void insert(const std::string &value);
-    void buildHeap();
+    void iniciandoHeap();
     string getMostFrequent();
     void comparaTopItens();
     void printHeap();

@@ -19,6 +19,5 @@ public:
     bool stopwords (string palavra);
     void separastopwords();
     string removePontuacao(string palavra);
-    void contagem();
 };
 #endif

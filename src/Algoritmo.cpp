@@ -27,7 +27,7 @@ void Algoritmo::lerArquivo(){
         }
        
     }   
-    h.buildHeap();
+    h.iniciandoHeap();
     h.comparaTopItens();
     h.printHeap();
 }
@@ -298,9 +298,4 @@ void Algoritmo::separastopwords()
     {
         cout << "Não foi possível abrir o arquivo." << endl;
     }
-}
-
-void Algoritmo::contagem(){
-
-        
 }
