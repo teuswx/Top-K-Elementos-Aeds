@@ -44,10 +44,10 @@ void Heap::printHeap()
 
     priority_queue<pair<int, string>, vector<pair<int, string>>, greater<pair<int, string>>> tempHeap = heap;
 
-    int i = 0;
+    
     while (!tempHeap.empty())
     {
-        cout << ++i << " " << tempHeap.top().second << " (" << tempHeap.top().first << " occurrencias)" << std::endl;
+        cout << " " << tempHeap.top().second << " (" << tempHeap.top().first << " occurrencias)" << std::endl;
         tempHeap.pop();
     }
 }

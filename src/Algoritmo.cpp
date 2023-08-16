@@ -1,32 +1,49 @@
 #include "Algoritmo.hpp"
 
-Algoritmo::Algoritmo(){
+Algoritmo::Algoritmo()
+{
     pacote.resize(15);
     separastopwords();
-
 }
-void Algoritmo::lerArquivo(){
-    
+void Algoritmo::lerArquivo()
+{
+
     ifstream arquivo_entrada("dataset/DomCasmurro.txt");
-    if (!arquivo_entrada)
-    {   
+    ifstream arquivo_entrada2("dataset/Semana_Machado_Assis.txt");
+    if (!arquivo_entrada || !arquivo_entrada2)
+    {
         throw "../main.cpp::lerTxt ---> Não foi possível abrir o arquivo de entrada";
     }
 
     string word;
+    string word2;
     int i = 0;
     Heap h;
-    while(arquivo_entrada >> word){
 
-        transform(word.begin(), word.end(), word.begin(), [](unsigned char c) {
-        return tolower(c);
-        });
-        if(stopwords(word) != true){
-            word.erase(remove_if(word.begin(), word.end(), ::ispunct), word.end()); 
+    while (arquivo_entrada >> word)
+    {
+
+        transform(word.begin(), word.end(), word.begin(), [](unsigned char c)
+                  { return tolower(c); });
+        if (stopwords(word) != true)
+        {
+            word.erase(remove_if(word.begin(), word.end(), ::ispunct), word.end());
+             word.erase(std::remove(word.begin(), word.end(), '-'), word.end());
             h.insert(word);
         }
-       
-    }   
+    }                       
+    while (arquivo_entrada2 >> word2)
+    {
+
+        transform(word2.begin(), word2.end(), word2.begin(), [](unsigned char c)
+                  { return tolower(c); });
+        if (stopwords(word2) != true)
+        {
+            word2.erase(remove_if(word2.begin(), word2.end(), ::ispunct), word2.end());
+             word2.erase(std::remove(word2.begin(), word2.end(), '-'), word2.end());
+            h.insert(word2);
+        }
+    }
     h.iniciandoHeap();
     h.comparaTopItens();
     h.printHeap();
@@ -219,7 +236,7 @@ bool Algoritmo::stopwords(string palavra)
     return false;
 }
 
-// função para separar as stopwords 
+// função para separar as stopwords
 void Algoritmo::separastopwords()
 {
 
@@ -247,47 +264,47 @@ void Algoritmo::separastopwords()
             {
                 pacote[3].push_back(stopword);
             }
-             else if (stopword.size() == 5)
+            else if (stopword.size() == 5)
             {
                 pacote[4].push_back(stopword);
             }
-             else if (stopword.size() == 6)
+            else if (stopword.size() == 6)
             {
                 pacote[5].push_back(stopword);
             }
-             else if (stopword.size() == 7)
+            else if (stopword.size() == 7)
             {
                 pacote[6].push_back(stopword);
             }
-             else if (stopword.size() == 8)
+            else if (stopword.size() == 8)
             {
                 pacote[7].push_back(stopword);
             }
-             else if (stopword.size() == 9)
+            else if (stopword.size() == 9)
             {
                 pacote[8].push_back(stopword);
             }
-             else if (stopword.size() == 10)
+            else if (stopword.size() == 10)
             {
                 pacote[9].push_back(stopword);
             }
-             else if (stopword.size() == 11)
+            else if (stopword.size() == 11)
             {
                 pacote[10].push_back(stopword);
             }
-             else if (stopword.size() == 12)
+            else if (stopword.size() == 12)
             {
                 pacote[11].push_back(stopword);
             }
             else if (stopword.size() == 13)
             {
-            pacote[12].push_back(stopword);
+                pacote[12].push_back(stopword);
             }
-             else if (stopword.size() == 14)
+            else if (stopword.size() == 14)
             {
                 pacote[13].push_back(stopword);
             }
-             else if (stopword.size() == 15)
+            else if (stopword.size() == 15)
             {
                 pacote[14].push_back(stopword);
             }
