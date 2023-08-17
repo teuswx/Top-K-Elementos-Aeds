@@ -19,6 +19,6 @@ public:
     void lerArquivo();
     bool stopwords (string palavra);
     void separastopwords();
-    string removePontuacao(string palavra);
+    bool removePontuacao(char palavra);
 };
 #endif

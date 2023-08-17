@@ -10,6 +10,7 @@ void Algoritmo::lerArquivo()
 
     ifstream arquivo_entrada("dataset/DomCasmurro.txt");
     ifstream arquivo_entrada2("dataset/Semana_Machado_Assis.txt");
+
     if (!arquivo_entrada || !arquivo_entrada2)
     {
         throw "../main.cpp::lerTxt ---> Não foi possível abrir o arquivo de entrada";
@@ -17,6 +18,7 @@ void Algoritmo::lerArquivo()
 
     string word;
     string word2;
+    string word_aux;
     int i = 0;
     Heap h;
 
@@ -27,11 +29,22 @@ void Algoritmo::lerArquivo()
                   { return tolower(c); });
         if (stopwords(word) != true)
         {
-            word.erase(remove_if(word.begin(), word.end(), ::ispunct), word.end());
-             word.erase(std::remove(word.begin(), word.end(), '-'), word.end());
-            h.insert(word);
+            while(i < word.length()){
+                char caractere = word[i];
+                if(removePontuacao(caractere) != true){
+                    word_aux += caractere;
+                }
+                i++;
+            }
+            i=0;
+
+            h.insert(word_aux);
         }
-    }                       
+    }           
+
+    arquivo_entrada.close();
+    word_aux = "";
+    i = 0;            
     while (arquivo_entrada2 >> word2)
     {
 
@@ -39,14 +52,25 @@ void Algoritmo::lerArquivo()
                   { return tolower(c); });
         if (stopwords(word2) != true)
         {
-            word2.erase(remove_if(word2.begin(), word2.end(), ::ispunct), word2.end());
-             word2.erase(std::remove(word2.begin(), word2.end(), '-'), word2.end());
-            h.insert(word2);
+            while(i < word.length()){
+                char caractere = word[i];
+                if(removePontuacao(caractere) != true){
+                    word_aux += caractere;
+                }
+                i++;
+            }
+            i=0;
+            h.insert(word_aux);
         }
     }
+
+    arquivo_entrada2.close();
+    
     h.iniciandoHeap();
     h.comparaTopItens();
     h.printHeap();
+
+
 }
 
 bool Algoritmo::stopwords(string palavra)
@@ -315,4 +339,20 @@ void Algoritmo::separastopwords()
     {
         cout << "Não foi possível abrir o arquivo." << endl;
     }
+}
+
+
+bool Algoritmo::removePontuacao(char caractere){
+    ifstream pont("dataset/pontuacao.txt");
+
+    char ctemp;
+
+    while(pont >> ctemp){
+        if(ctemp == caractere){
+            return true;
+        }
+        
+    }
+    pont.close();
+    return false;
 }
