@@ -47,7 +47,7 @@ void Heap::printHeap()
     
     while (!tempHeap.empty())
     {
-        cout << " " << tempHeap.top().second << " (" << tempHeap.top().first << " occurrencias)" << std::endl;
+        cout << " " << tempHeap.top().second << " (" << tempHeap.top().first << " occorrencias)" << std::endl;
         tempHeap.pop();
     }
 }

@@ -13,7 +13,18 @@ Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp"
 * **Transform**: está definida na biblioteca "algorithm" que é utilizada para aplicar uma transformação em cada elemento de uma sequência.
 * **Tolower**: está definida na biblioteca "cctype" e é utilizada para converter cada caractere para minusculo
 
-Para realizar a remoção da pontuação, o código lê um arquivo contendo todas as pontuações presentes no texto realizando a comparação de caractere por caractere.
+Para realizar a remoção da pontuação, o código lê um arquivo contendo todas as pontuações presentes no texto realizando a comparação de caractere por caractere assim apenas concatenado os caracteres que não são sinais de pontuação.
+
+Para realizar a contrução da hash utilizou-se a classe implementada "unordered_map" que é uma estrutura associativa que armazena elementos em pares chave-valor, onde cada chave é unica.  Explicando melhor como funciona a colisão dos elementos em uma hash, ela ocorre quando duas ou mais chaves tem o mesmo valor de hash. No "unordered_map" ela é implementada utilizando uma técnica conhecida como "open addressing"(endereçamento aberto) ou "chaining" (encadeamento).
+
+* **Open Addressing(Endereçamento Aberto)**: Nessa abordagem, quando ocorre uma colisão (ou seja, quando a função de hash gera um índice que já está ocupado), o unordered_map tenta encontrar o próximo espaço vazio (slot) na tabela hash para inserir o elemento. Existem diferentes métodos de resolução de colisões no endereçamento aberto, como linear probing (sondagem linear), quadratic probing (sondagem quadrática) e double hashing (hashing duplo).
+    * **Linear Probing**: Quando ocorre uma colisão, o sistema tenta inserir o elemento no próximo slot vazio na tabela.
+    * **Quadratic Probing**: O sistema tenta encontrar um novo slot vazio usando uma sequência quadrática de tentativas.
+    * **Double Hashing**: Usa uma segunda função de hash para calcular o passo a ser tomado em caso de colisão.
+
+* **Chaining(Encadeamento)**: Nessa abordagem, cada slot da tabela hash contém uma lista (ou outra estrutura de dados) que mantém todos os elementos que têm o mesmo valor de hash. Quando ocorre uma colisão, o novo elemento é simplesmente adicionado à lista correspondente. Isso significa que diferentes elementos com o mesmo valor de hash são armazenados em uma estrutura de dados encadeada.
+
+    A escolha entre essas abordagens é geralmente feita pela implementação do compilador/C++ standard library, e muitas vezes você não precisa se preocupar com isso diretamente. O C++ oferece uma abstração sólida para a utilização do unordered_map, então você pode simplesmente tratar a estrutura de dados como uma coleção de pares chave-valor sem se preocupar com os detalhes internos de resolução de colisões.
 
  Depois o programa realiza a inserção de cada elemento string no método "insert" da classe "heap.cpp"já padronizado com as letras minusculas e sem caracteres considerados pontuação. Os elementos foram inseridos em uma hash utilizando a biblioteca "unordered_map" na variável "map" permitindo o armazenamento dos memos utilizando pares chave-valor, onde cada chave é única e associada a um valor, aproveitando também para realizar a contagem da quantidade de elementos repetidos.
 
