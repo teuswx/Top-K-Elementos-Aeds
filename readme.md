@@ -8,11 +8,12 @@ O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos
 
 ## Lógica :bulb:
 
-Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp" onde os arquivos "DomCasmurro.txt" e "Semana_Machado_Assis.txt" são lidos. Para realizar a padronização das palavras, utilizamos as seguintes funções "trasnform" e "tolower"da biblioteca padrão do c++ "iostream", "string" e "algorothm".
+Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp" onde os arquivos "DomCasmurro.txt" e "Semana_Machado_Assis.txt" são lidos. Para realizar a padronização das palavras, utilizamos as seguintes funções "trasnform" e "tolower"da biblioteca padrão do c++ "iostream", "string" e "algorithm".
 
 * **Transform**: está definida na biblioteca "algorithm" que é utilizada para aplicar uma transformação em cada elemento de uma sequência.
 * **Tolower**: está definida na biblioteca "cctype" e é utilizada para converter cada caractere para minusculo
-* **remove_if e ::ispunct**; são utilizadas em conjunto para remover caracteres que são considerados pontuação.
+
+Para realizar a remoção da pontuação, o código lê um arquivo contendo todas as pontuações presentes no texto realizando a comparação de caractere por caractere.
 
  Depois o programa realiza a inserção de cada elemento string no método "insert" da classe "heap.cpp"já padronizado com as letras minusculas e sem caracteres considerados pontuação. Os elementos foram inseridos em uma hash utilizando a biblioteca "unordered_map" na variável "map" permitindo o armazenamento dos memos utilizando pares chave-valor, onde cada chave é única e associada a um valor, aproveitando também para realizar a contagem da quantidade de elementos repetidos.
 
@@ -23,7 +24,7 @@ Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp"
 O método "printHeap" imprime os elementos da min heap. Ele cria uma cópia temporária da heap chamada tempHeap e, em seguida, itera sobre essa heap temporária para imprimir os pares na ordem crescente das contagens. Cada par é impresso com seu índice, a string e o número de ocorrências.
 
 ## Exemplo de execução :hammer:
-
+![Screenshot 2023-08-19 114032](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/9b60188a-a3c9-417d-9009-fe2a6589530d)
 
 ## Conclusão :ballot_box_with_check:
 
