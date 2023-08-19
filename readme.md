@@ -8,7 +8,7 @@ O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos
 
 ## Lógica :bulb:
 
-Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp" onde os arquivos "DomCasmurro.txt" e "Semana_Machado_Assis.txt" são lidos. Para realizar a padronização das palavras, utilizamos as seguintes funções "trasnform", "tolower", "remove_if" e "ispunct" da biblioteca padrão do c++ "iostream", "string" e "algorothm".
+Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp" onde os arquivos "DomCasmurro.txt" e "Semana_Machado_Assis.txt" são lidos. Para realizar a padronização das palavras, utilizamos as seguintes funções "trasnform" e "tolower"da biblioteca padrão do c++ "iostream", "string" e "algorothm".
 
 * **Transform**: está definida na biblioteca "algorithm" que é utilizada para aplicar uma transformação em cada elemento de uma sequência.
 * **Tolower**: está definida na biblioteca "cctype" e é utilizada para converter cada caractere para minusculo

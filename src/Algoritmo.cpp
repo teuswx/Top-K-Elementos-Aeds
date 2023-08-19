@@ -37,11 +37,15 @@ void Algoritmo::lerArquivo()
                 i++;
             }
             i=0;
-
-            h.insert(word_aux);
+            
+            if(word_aux != ""){
+                h.insert(word_aux);
+            }
+            
+            word_aux = "";
+           
         }
     }           
-
     arquivo_entrada.close();
     word_aux = "";
     i = 0;            
@@ -52,19 +56,25 @@ void Algoritmo::lerArquivo()
                   { return tolower(c); });
         if (stopwords(word2) != true)
         {
-            while(i < word.length()){
-                char caractere = word[i];
+            while(i < word2.length()){
+                char caractere = word2[i];
                 if(removePontuacao(caractere) != true){
                     word_aux += caractere;
                 }
                 i++;
             }
             i=0;
-            h.insert(word_aux);
+            
+            if(word_aux != ""){
+                h.insert(word_aux);
+            }
+            
+            word_aux = "";
         }
     }
 
     arquivo_entrada2.close();
+    arquivo_entrada.close();
     
     h.iniciandoHeap();
     h.comparaTopItens();
