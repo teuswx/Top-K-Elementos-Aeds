@@ -24,7 +24,7 @@ Para realizar a remoção da pontuação, o código lê um arquivo contendo toda
 O método "printHeap" imprime os elementos da min heap. Ele cria uma cópia temporária da heap chamada tempHeap e, em seguida, itera sobre essa heap temporária para imprimir os pares na ordem crescente das contagens. Cada par é impresso com seu índice, a string e o número de ocorrências.
 
 ## Exemplo de execução :hammer:
-![Screenshot 2023-08-19 114032](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/9b60188a-a3c9-417d-9009-fe2a6589530d)
+![aeds](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/b3cba7a4-1c3e-4b4a-bce9-fbab10196481)
 
 ## Conclusão :ballot_box_with_check:
 
