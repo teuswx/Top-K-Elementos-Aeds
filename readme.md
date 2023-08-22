@@ -9,6 +9,7 @@ O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos
 ## Leitura de arquivos :file_folder:
  Os arquivos devem estar na pasta "dataset" e possuir a seguinte estrutura "inputN.txt", onde N é o índice do arquivo. Para realizar a leitura dos arquivos, a váriavel N deve ser definida com a quantidade necessária de arquivos a serem lidos na classe "algoritmo.hpp". no exemplo a seguir, são lidos 2 arquivos:
 
+![Screenshot 2023-08-22 121837](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/73f2bb81-658e-4f05-9739-a73ef2f89516)
 
 
  trecho exemplo de funcionamento:
