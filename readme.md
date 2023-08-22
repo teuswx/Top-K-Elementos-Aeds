@@ -7,7 +7,7 @@
 O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos da pasta "dataset". Para isso, adota-se uma estratégia que envolve o uso de tabelas de hash para registrar a frequência de todos os itens e uma estrutura de heap para gerenciar uma lista dos k itens de maior valor. A abordagem de tabelas de hash permite contabilizar eficientemente a frequência dos itens, otimizando as operações de busca. Enquanto isso, a estrutura de heap, seja min heap ou max heap, assegura a constante manutenção dos k itens mais valiosos, possibilitando a substituição de elementos menos valiosos por aqueles de maior valor à medida que são encontrados. 
 
 ## Leitura de arquivos :file_folder:
- Os arquivos devem conter a seguinte estrutura "inputN.txt", onde N é a quantidade de arquivos e definida como variável global. Para realizar a leitura dos arquivos, a váriavel N deve ser definida com a quantidade necessária de arquivos a serem lidos na classe "algoritmo.hpp". no exemplo a seguir, são lidos 2 arquivos:
+ Os arquivos devem estar na pasta "dataset" e possuir a seguinte estrutura "inputN.txt", onde N é o índice do arquivo. Para realizar a leitura dos arquivos, a váriavel N deve ser definida com a quantidade necessária de arquivos a serem lidos na classe "algoritmo.hpp". no exemplo a seguir, são lidos 2 arquivos:
 
 
 
