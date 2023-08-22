@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cctype>
 #include <unordered_map>
+#define N 2
 using namespace std;
 
 class Algoritmo

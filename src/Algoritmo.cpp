@@ -8,79 +8,58 @@ Algoritmo::Algoritmo()
 void Algoritmo::lerArquivo()
 {
 
-    ifstream arquivo_entrada("dataset/DomCasmurro.txt");
-    ifstream arquivo_entrada2("dataset/Semana_Machado_Assis.txt");
-
-    if (!arquivo_entrada || !arquivo_entrada2)
-    {
-        throw "../main.cpp::lerTxt ---> Não foi possível abrir o arquivo de entrada";
-    }
-
     string word;
-    string word2;
     string word_aux;
-    int i = 0;
+    int i=0, k = 1;
     Heap h;
 
-    while (arquivo_entrada >> word)
+    while (k <= N)
     {
+        ifstream arquivo_entrada("dataset/input" + to_string(k) + ".txt");
 
-        transform(word.begin(), word.end(), word.begin(), [](unsigned char c)
-                  { return tolower(c); });
-        if (stopwords(word) != true)
+        if (!arquivo_entrada)
         {
-            while(i < word.length()){
-                char caractere = word[i];
-                if(removePontuacao(caractere) != true){
-                    word_aux += caractere;
-                }
-                i++;
-            }
-            i=0;
-            
-            if(word_aux != ""){
-                h.insert(word_aux);
-            }
-            
-            word_aux = "";
-           
+            throw "../main.cpp::lerTxt ---> Não foi possível abrir o arquivo de entrada";
         }
-    }           
-    arquivo_entrada.close();
-    word_aux = "";
-    i = 0;            
-    while (arquivo_entrada2 >> word2)
-    {
+        
+        while (arquivo_entrada >> word)
+        {
 
-        transform(word2.begin(), word2.end(), word2.begin(), [](unsigned char c)
-                  { return tolower(c); });
-        if (stopwords(word2) != true)
-        {
-            while(i < word2.length()){
-                char caractere = word2[i];
-                if(removePontuacao(caractere) != true){
-                    word_aux += caractere;
+            transform(word.begin(), word.end(), word.begin(), [](unsigned char c)
+                      { return tolower(c); });
+            if (stopwords(word) != true)
+            {
+                while (i < word.length())
+                {
+                    char caractere = word[i];
+                    if (removePontuacao(caractere) != true)
+                    {
+                        word_aux += caractere;
+                    }
+                    i++;
                 }
-                i++;
+                i = 0;
+
+                if (word_aux != "")
+                {
+                    h.insert(word_aux);
+                }
+
+                word_aux = "";
             }
-            i=0;
-            
-            if(word_aux != ""){
-                h.insert(word_aux);
-            }
-            
-            word_aux = "";
         }
+
+        word_aux = "";
+        i = 0;
+        arquivo_entrada.close();
+        k++;
     }
 
-    arquivo_entrada2.close();
-    arquivo_entrada.close();
     
+
     h.iniciandoHeap();
     h.comparaTopItens();
     h.printHeap();
-
-
 }
 
 bool Algoritmo::stopwords(string palavra)
@@ -351,17 +330,18 @@ void Algoritmo::separastopwords()
     }
 }
 
-
-bool Algoritmo::removePontuacao(char caractere){
+bool Algoritmo::removePontuacao(char caractere)
+{
     ifstream pont("dataset/pontuacao.txt");
 
     char ctemp;
 
-    while(pont >> ctemp){
-        if(ctemp == caractere){
+    while (pont >> ctemp)
+    {
+        if (ctemp == caractere)
+        {
             return true;
         }
-        
     }
     pont.close();
     return false;

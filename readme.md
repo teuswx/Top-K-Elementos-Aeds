@@ -6,6 +6,24 @@
 
 O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos da pasta "dataset". Para isso, adota-se uma estratégia que envolve o uso de tabelas de hash para registrar a frequência de todos os itens e uma estrutura de heap para gerenciar uma lista dos k itens de maior valor. A abordagem de tabelas de hash permite contabilizar eficientemente a frequência dos itens, otimizando as operações de busca. Enquanto isso, a estrutura de heap, seja min heap ou max heap, assegura a constante manutenção dos k itens mais valiosos, possibilitando a substituição de elementos menos valiosos por aqueles de maior valor à medida que são encontrados. 
 
+## Leitura de arquivos :file_folder:
+ Os arquivos devem conter a seguinte estrutura "inputN.txt", onde N é a quantidade de arquivos e definida como variável global. Para realizar a leitura dos arquivos, a váriavel N deve ser definida com a quantidade necessária de arquivos a serem lidos na classe "algoritmo.hpp". no exemplo a seguir, são lidos 2 arquivos:
+
+
+
+ trecho exemplo de funcionamento:
+
+ <pre>
+    <code>
+        K = 2;
+        while (k <= N)
+    {
+        ifstream arquivo_entrada("dataset/input" + to_string(k) + ".txt");
+        k++;
+    }
+        
+    </code> 
+</pre>
 ## Lógica :bulb:
 
 Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp" onde os arquivos "DomCasmurro.txt" e "Semana_Machado_Assis.txt" são lidos. Para realizar a padronização das palavras, utilizamos as seguintes funções "trasnform" e "tolower"da biblioteca padrão do c++ "iostream", "string" e "algorithm".
@@ -13,7 +31,7 @@ Primeiramente o programa inicia o método "lerArquivo" da classe "Algoritmo.cpp"
 * **Transform**: está definida na biblioteca "algorithm" que é utilizada para aplicar uma transformação em cada elemento de uma sequência.
 * **Tolower**: está definida na biblioteca "cctype" e é utilizada para converter cada caractere para minusculo
 
-Para realizar a remoção da pontuação, o código lê um arquivo contendo todas as pontuações presentes no texto realizando a comparação de caractere por caractere assim apenas concatenado os caracteres que não são sinais de pontuação.
+A remoção da pontuação foi feita da seguinte forma, o código lê um arquivo contendo todas as pontuações presentes no texto realizando a comparação de caractere por caractere apenas concatenado os caracteres que não são sinais de pontuação.
 
 Para realizar a contrução da hash utilizou-se a classe implementada "unordered_map" que é uma estrutura associativa que armazena elementos em pares chave-valor, onde cada chave é unica.  Explicando melhor como funciona a colisão dos elementos em uma hash, ela ocorre quando duas ou mais chaves tem o mesmo valor de hash. No "unordered_map" ela é implementada utilizando uma técnica conhecida como "open addressing"(endereçamento aberto) ou "chaining" (encadeamento).
 
