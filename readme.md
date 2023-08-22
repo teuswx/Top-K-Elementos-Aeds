@@ -9,7 +9,8 @@ O desafio consiste em identificar os k itens mais valiosos contidos nos arquivos
 ## Leitura de arquivos :file_folder:
  Os arquivos devem estar na pasta "dataset" e possuir a seguinte estrutura "inputN.txt", onde N é o índice do arquivo. Para realizar a leitura dos arquivos, a váriavel N deve ser definida com a quantidade necessária de arquivos a serem lidos na classe "algoritmo.hpp". no exemplo a seguir, são lidos 2 arquivos:
 
-![Screenshot 2023-08-22 121837](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/73f2bb81-658e-4f05-9739-a73ef2f89516)
+![Screenshot 2023-08-22 121837](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/6f94cad2-ae2c-4972-ae58-3c09e65eff0f)
+
 
 
  trecho exemplo de funcionamento:
@@ -54,7 +55,8 @@ Para realizar a contrução da hash utilizou-se a classe implementada "unordered
 O método "printHeap" imprime os elementos da min heap. Ele cria uma cópia temporária da heap chamada tempHeap e, em seguida, itera sobre essa heap temporária para imprimir os pares na ordem crescente das contagens. Cada par é impresso com seu índice, a string e o número de ocorrências.
 
 ## Exemplo de execução :hammer:
-![aeds](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/b3cba7a4-1c3e-4b4a-bce9-fbab10196481)
+![aeds](https://github.com/teuswx/Top-K-Elementos-Aeds/assets/102326098/c8db19cd-e9dc-4aa7-9d5b-a6079610a919)
+
 
 ## Conclusão :ballot_box_with_check:
 
